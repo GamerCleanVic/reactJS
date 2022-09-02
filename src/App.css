@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  filter:hue-rotate(67deg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +36,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+.bloco1{
+  background-color: rgba(0, 0, 0, 20%);
+  color: darkblue;
+  padding: 15px;
+  /* border: solid 7px rgb(0, 0, 0,20%); */
+  border-radius: 7px;
+  font-weight:bold ;
+  font-size: 1.7rem;
+  /* filter:hue-rotate(95deg); */
+  width: 100%;
+  margin: 0px auto;
+}
+.botao1{
+  background-color: darkslateblue;
+  color: #ccc;
+  margin: 5px;
+  padding: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.botao1:hover{
+  background-color: #fff;
+  color: darkslateblue;
+  border: solid 3px darkslateblue;
 }

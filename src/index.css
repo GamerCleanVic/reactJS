@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.p1{
+  font-family: "Orbitron";
+  color: lightskyblue;
+  font-size: 3rem;
+}
