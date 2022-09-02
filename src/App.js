@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 function App() {     
   const bloco = 
-    <div className={"bloco1"}>
-      <div><a href="#" className={'botao1'}>
+    <p className={"bloco1"}>
+      <a href="#" className={'botao1'}>
         YouTube
       </a>
       <a href="#" className={'botao1'}>
@@ -12,32 +13,28 @@ function App() {
       </a>
       <a href="#" className={'botao1'}>
         Instagraum
-      </a></div>
-    </div>
+      </a>
+    </p>
   ;
   const element = <div>{bloco}</div>; 
 
   //Função1 treino
-  function formatName(user){
-      return `${user.firstName} ${user.lastName}`;
+  const element2 = {
+    type: 'h1',
+    props:{
+      className: 'titulo1',
+      children: 'Olá, JottaLPB'
     }
-    const user = {
-      firstName: 'Harper',
-      lastName: 'Perez'
-    }
-    const element2 = (
-      <h1>
-        Hello, {formatName(user)}!
-      </h1>
-    );
-    //Fim Função 1
+  };
+  //Fim Função 1
 
   return (
     <div className="App">
       <header className="App-header">        
-        <p>
-          {element2}
-        </p>
+        <h1 className={'titulo1'}>
+          Este resultado foi para o console.log!
+          {console.log(element2)}
+        </h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p className={"p1"}>
           BOA TARDE!

@@ -64,3 +64,8 @@
   color: darkslateblue;
   border: solid 3px darkslateblue;
 }
+.titulo1{
+  text-transform: uppercase;
+  font-family: "Days One";
+  color: lightsteelblue;
+}
