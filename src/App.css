@@ -111,4 +111,10 @@ body{
   color: #ccc;
   margin-top: 0.2rem;
   margin-bottom: 3rem;
+  width: 21rem;
+  transition: 2s;
+}
+.texto1Clock:hover{
+  width: 41rem;
+  height: 16rem;
 }

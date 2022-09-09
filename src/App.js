@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { renderIntoDocument } from 'react-dom/test-utils';
 
 function App() {     
   const bloco = 
@@ -37,20 +38,18 @@ function App() {
       </a>
     </header>
   ;
-  function tick() {
-    const relogio = (
-      <div className={'bgRelogio'}>
-        <h1 className={'tituloClock'}>
-          Relógio
-        </h1>
-        <h2 className={'texto1Clock'}>
-          São {new Date().toLocaleTimeString()} horas.
-        </h2>
-      </div>
-    );
-    return relogio;
+  function Sum(){
+       const relogio3 = (
+          <div>
+            <h1>Hello, world!</h1>
+            <h2>
+              It is {new Date().toLocaleTimeString()}
+            </h2>
+          </div>
+       );
+       return relogio3;       
   }
-  const relogio2 = tick();
+  setInterval(Sum, 1000);
 
   return (
     <div className="App">
@@ -69,14 +68,16 @@ function App() {
         <h1>
             {element2}
         </h1>
-        <p className={"p1"}>
-            BOA TARDE!
-        </p>
+        <div className={'bgRelogio'}>
+            <h1 className={'bgRelogio'}>
+              {/*tituloRelogio2 */}
+            </h1>
+            <h2 className={'texto1Clock'}>
+              {<Sum />}
+            </h2>            
+        </div>
         <p>
             {element}
-        </p>
-        <p>
-            {relogio2}
         </p>
       </header>
     </div>    
