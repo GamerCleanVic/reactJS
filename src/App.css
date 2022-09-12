@@ -1,0 +1,76 @@
+body{
+  background-color: #2b2b2b;
+  color: #fff;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.container-btn1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;  
+}
+.parag1{
+  transition: 2s;
+}
+.parag1:hover{
+  color: #fff;
+  font-weight: bold;
+  font-size: 3em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.btn1{
+  background-color: indigo;
+  color: white;
+  border-radius: 5px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+.headerVite{
+  background-color: #181818;
+  color: rgb(123, 79, 154);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
