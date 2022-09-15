@@ -1,12 +1,21 @@
 import {Header} from './components/Header';
+import {Body} from './components/Body';
+import Photo from './components/Photo';
 const App = () => {  
   return(    
-    <div className={"container-btn1"}>      
-      <Header />
-      <p className="parag1">
-        Muito obg por assistir!
-      </p>
-    </div>
+    <div>      
+      <div  className="headerVite">
+        <Header 
+          title="Este é um exemplo"
+        />
+        <Header 
+          title="Outro título"
+        />
+      </div>
+      <Body />
+      <Photo imgSrc="./src/assets/images/anotado.jpg"
+       imgDesc="Anotado" className="imgGlobal"/>        
+    </div>  
   );
 }
 

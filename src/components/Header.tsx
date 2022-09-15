@@ -1,9 +1,12 @@
-export const Header = () => {
+type Props ={
+  title: string;
+}
+export const Header = ({title}: Props) => {
     return(
-      <header className="headerVite">
+      <header>
         <h1>
-          Título do Header
-        </h1>
+          {title}
+        </h1>        
         <hr />
       </header>
     );

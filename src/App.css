@@ -51,12 +51,15 @@ body{
 }
 .parag1{
   transition: 2s;
+  background-color: none;
 }
 .parag1:hover{
-  color: #fff;
+  color: rgb(149, 224, 149);
   font-weight: bold;
   font-size: 3em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 12rem;
 }
 .btn1{
   background-color: indigo;
@@ -69,8 +72,26 @@ body{
 }
 .headerVite{
   background-color: #181818;
-  color: rgb(123, 79, 154);
+  color: rgb(149, 224, 149);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  text-transform: uppercase;
+}
+hr{
+  border: solid 2px rgb(149, 224, 149);
+}
+.imgGlobal{
+  margin-top: 7rem;
+  width: 31rem;  
+  border: solid 7px rgb(149, 224, 149, 0%);
+  border-radius: 5px;
+}
+.imgGlobal:hover{
+  border: solid 7px rgb(149, 224, 149);
+}
+.texto1Img1{
+  text-transform: uppercase;
+  font-family: 'Finger Paint';
 }
