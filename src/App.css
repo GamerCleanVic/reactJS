@@ -67,8 +67,21 @@ body{
   border-radius: 5px;
   padding-top: 2em;
   padding-bottom: 2em;
-  padding-right: 7px;
-  padding-left: 7px;
+  padding-right: 7rem;
+  padding-left: 7rem;
+  margin-top: 7rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: solid 0.3rem rgb(149, 224, 149,0%);
+  transition: 1.3s;
+}
+.btn1:hover{
+  border: solid 0.3rem rgb(0, 129, 0);
+  background-color: #ccc;
+  color: indigo;
+  font-size: 1.7rem;
 }
 .headerVite{
   background-color: #181818;
