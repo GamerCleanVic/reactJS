@@ -65,10 +65,10 @@ body{
   background-color: indigo;
   color: white;
   border-radius: 5px;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-right: 7rem;
-  padding-left: 7rem;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin-top: 7rem;
   margin-bottom: 0.3rem;
   font-weight: bold;
@@ -96,8 +96,8 @@ hr{
   border: solid 2px rgb(149, 224, 149);
 }
 .imgGlobal{
-  margin-top: 7rem;
-  width: 31rem;  
+  margin-top: 0.3rem;
+  width: 21rem;  
   border: solid 7px rgb(149, 224, 149, 0%);
   border-radius: 5px;
 }
@@ -107,4 +107,16 @@ hr{
 .texto1Img1{
   text-transform: uppercase;
   font-family: 'Finger Paint';
+}
+.h1Foto{
+  margin-bottom: 0.03rem;
+  color: rgb(149, 224, 149);
+  text-shadow: 3px 3px 3px #181818;
+}
+.divTeste{
+  margin-top: 7rem;
+}
+.tableTest{
+  border: solid 1px rgb(149, 224, 149);
+  margin-bottom: 0px;
 }

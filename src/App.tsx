@@ -1,35 +1,24 @@
-import {Header} from './components/Header';
-import {Body} from './components/Body';
 import Photo from './components/Photo';
-import {useState} from 'react';
+import React, {useState} from 'react';
 const App = () => {
-  const [name, setName] = useState('Jonas');
-  const handleClick = () =>{
-    setName("Jotta!");
+  
+  const [show, setShow] = useState(false);
+  const handleClick = () => {
+    setShow(!show);
   }
   return(    
-    <div>      
-      <div  className="headerVite">
-        <Header 
-          title="Este é um exemplo"
-        />
-        <Header 
-          title="Outro título"
-        />
+    <div>
+      <div>
+         <button className="btn1" onClick={handleClick}>
+            {show ? 'OCULTAR' : 'MOSTRAR'}
+         </button>
+         {show &&
+         <div className="parag1">
+            Obigado por assistir!
+          </div>}
       </div>
-      <Body />
-
-      <div>      
-        <button className="btn1" onClick={handleClick}>
-          Clique aqui
-        </button>
-        <p>O nome é {name}.</p>
-        <p className="parag1">
-          Obrigado por assistirem!  
-        </p>    
-      </div>
-
-      <Photo imgSrc="./src/assets/images/anotado.jpg"
+      <h1 className="h1Foto">ANOTADO</h1>
+      <Photo imgSrc="./src/assets/images/logoLPTV.png"
        imgDesc="Anotado" className="imgGlobal"/>        
     </div>  
   );
