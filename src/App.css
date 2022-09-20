@@ -61,28 +61,6 @@ body{
   text-transform: uppercase;
   margin-bottom: 12rem;
 }
-.btn1{
-  background-color: indigo;
-  color: white;
-  border-radius: 5px;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  margin-top: 7rem;
-  margin-bottom: 0.3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  border: solid 0.3rem rgb(149, 224, 149,0%);
-  transition: 1.3s;
-}
-.btn1:hover{
-  border: solid 0.3rem rgb(0, 129, 0);
-  background-color: #ccc;
-  color: indigo;
-  font-size: 1.7rem;
-}
 .headerVite{
   background-color: #181818;
   color: rgb(149, 224, 149);

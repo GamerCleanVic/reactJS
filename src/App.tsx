@@ -1,23 +1,15 @@
 import Photo from './components/Photo';
 import React, {useState} from 'react';
+import Botao from './components/Botao';
 const App = () => {
   
-  const [show, setShow] = useState(false);
-  const handleClick = () => {
-    setShow(!show);
-  }
+  
   return(    
     <div>
       <div>
-         <button className="btn1" onClick={handleClick}>
-            {show ? 'OCULTAR' : 'MOSTRAR'}
-         </button>
-         {show &&
-         <div className="parag1">
-            Obigado por assistir!
-          </div>}
+         <Botao />
       </div>
-      <h1 className="h1Foto">ANOTADO</h1>
+      <h1 className="h1Foto">JOTTALPB</h1>
       <Photo imgSrc="./src/assets/images/logoLPTV.png"
        imgDesc="Anotado" className="imgGlobal"/>        
     </div>  
