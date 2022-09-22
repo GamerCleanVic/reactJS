@@ -6,7 +6,9 @@ const App = () => {
   
   return(    
     <C.Container bgContainer="#181818">
-      Texto do Container
+      <span>Texto do Container</span>
+      <a href='#' className="link">Link</a>
+
       <C.Botao bg="lightgreen" >
         Botão grande
       </C.Botao>

@@ -8,6 +8,28 @@ export const Container = styled.div<StyleContainer>`
     color: #fff;
     padding: 20px;
     border-radius: 5px;
+    span{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .link{
+        color: lightgreen;
+        margin: 1.1rem;
+        background-color: indigo;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+
+        &:hover{
+            background-color: grey;
+            color: #000;
+        }
+    }
 `;
 
 type BotaoProps = {
