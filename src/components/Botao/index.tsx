@@ -1,12 +1,12 @@
-import './styles.css';
+import styles from './styles.module.css';
 
 const Botao = () => {
     return(
-        <div className="square">
-            <button className="btn1">
+        <div className={styles.square}>
+            <button className={styles.btn1}>
                 Clique aqui
             </button>
-            <p className="legend">
+            <p className={styles.legend}>
                 Legenda
             </p>
         </div>

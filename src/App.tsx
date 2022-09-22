@@ -1,18 +1,19 @@
-import Photo from './components/Photo';
 import React, {useState} from 'react';
-import Botao from './components/Botao';
+import * as C from './components/styled1/AppStyles';
+
 const App = () => {
   
   
   return(    
-    <div>
-      <div>
-         <Botao />
-      </div>
-      <h1 className="h1Foto">JOTTALPB</h1>
-      <Photo imgSrc="./src/assets/images/logoLPTV.png"
-       imgDesc="Anotado" className="imgGlobal"/>        
-    </div>  
+    <C.Container bgContainer="#181818">
+      Texto do Container
+      <C.Botao bg="lightgreen" >
+        Botão grande
+      </C.Botao>
+      <C.Botao bg="darkgreen" corTexto="#fff" small>
+        Botão pequeno
+      </C.Botao>
+    </C.Container>
   );
 }
 
