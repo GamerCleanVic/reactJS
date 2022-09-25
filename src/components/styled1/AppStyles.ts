@@ -4,10 +4,12 @@ type StyleContainer = {
     bgContainer: string;
 }
 export const Container = styled.div<StyleContainer>`
+    margin: auto;
+    max-width: 600px;    
     background-color: ${props => props.bgContainer};
     color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 5px;    
     span{
         font-weight: bold;
         text-transform: uppercase;
@@ -30,6 +32,9 @@ export const Container = styled.div<StyleContainer>`
             color: #000;
         }
     }
+    @media (max-width: 480px){
+        background: ${props => props.bgContainer=('#003700')}
+    }
 `;
 
 type BotaoProps = {
@@ -41,6 +46,7 @@ export const Botao = styled.button<BotaoProps>`
     font-size: ${(props) => props.small ? '15px' : '31px'};
     border-radius: 5px;
     margin-left: 12px;
+    margin-top: 12px;
     background-color: ${props => props.bg};
     color: ${props => props.corTexto};
 `;
