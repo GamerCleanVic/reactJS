@@ -1,23 +1,29 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import * as C from './components/styled1/AppStyles';
+import {Movies} from './components/types/Movies';
+
 
 const App = () => {
-  
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [fullName, setFullName] = useState('');
 
-  useEffect (() => {
-      setFullName(`${name} ${lastName}`);
-    }, [name, lastName]
+  const [movies, setMovies] = useState<Movies[]>([]);
+  const loadMovies = () => {
+    fetch('https://api.b7web.com.br/cinema/')
+    .then(
+      (response) => {
+          return response.json();
+      }
+    )
+    .then(
+      (json)=>{
+        setMovies(json);
+      }
+    );
+  }
+  useEffect(
+    () => {
+      loadMovies();
+    }, []
   );
-
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  }
-  const handleLastNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLastName(e.target.value);
-  }
 
   return(
     <div className="
@@ -37,27 +43,40 @@ const App = () => {
         <div className="bg-cyan-300 w-7 p-[2px]"></div>
       </div>
       <div className="
-        fixed
+        
         right-0 
       text-cyan-300
         mr-3
 
       ">
-        <a href='#' className='no-underline'>Texto Qualquer Aqui</a>
-        <div className="mt-9 flex flex-col">
-            <input className="mb-3 text-blue-700" type="text" placeholder=
-            "Digite seu NOME" value={name} onChange={handleNameChange}/>
-            <input className="text-blue-700 mb-3" type="text" placeholder='Digite seu SOBRENOME'
-             value={lastName} onChange={handleLastNameChange}/>
-        </div>
-        <p className="text-white">Nome completo: 
-        <i className="text-cyan-300 ml-2">{fullName}</i></p>
-        <div className="parag1 mt-7">
-          Obrigado por assistir!
+        <a href='#' className='no-underline'>ARTIGOS</a>        
+        <div>
+            <button className="
+              mt-7
+             text-blue-700
+              flex rol
+             "
+              onClick={loadMovies}
+             >
+              Carregar filmes
+            </button>
+            Total de Filmes: {movies.length}
+            <div className="mt-3 grid grid-cols-6 gap-3">
+              {movies.map((item, index) => (
+                <div key={index}>
+                  <img src={item.avatar} className="w-32 block" />
+                  <p className="text-white
+                   font-normal 
+                   text-[12px]"
+                  >
+                    {item.titulo}
+                  </p>
+                </div>
+              ))}
+            </div>
         </div>
       </div>
     </div>      
   );
 }
-
 export default App;
