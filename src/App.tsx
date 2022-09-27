@@ -6,7 +6,14 @@ import {Movies} from './components/types/Movies';
 const App = () => {
 
   const [movies, setMovies] = useState<Movies[]>([]);
-  const loadMovies = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(
+    () => {
+      loadMovies();
+    }, []
+  );
+
+  /* const loadMovies = () => {
     fetch('https://api.b7web.com.br/cinema/')
     .then(
       (response) => {
@@ -18,14 +25,24 @@ const App = () => {
         setMovies(json);
       }
     );
+  } */
+
+  const loadMovies = async () => {
+    try{
+      setLoading(true);
+      let response = await fetch('https://api.b7web.com.br/cinema');
+      let json = await response.json();
+      setLoading(false);
+      setMovies(json);
+    }
+    catch(e){
+        setLoading(false);
+        setMovies([]);
+    }
   }
-  useEffect(
-    () => {
-      loadMovies();
-    }, []
-  );
 
   return(
+    
     <div className="
     bg-blue-900
       p-3
@@ -50,7 +67,7 @@ const App = () => {
 
       ">
         <a href='#' className='no-underline'>ARTIGOS</a>        
-        <div>
+        <div>            
             <button className="
               mt-7
              text-blue-700
@@ -59,21 +76,34 @@ const App = () => {
               onClick={loadMovies}
              >
               Carregar filmes
-            </button>
-            Total de Filmes: {movies.length}
-            <div className="mt-3 grid grid-cols-6 gap-3">
-              {movies.map((item, index) => (
-                <div key={index}>
-                  <img src={item.avatar} className="w-32 block" />
-                  <p className="text-white
-                   font-normal 
-                   text-[12px]"
-                  >
-                    {item.titulo}
-                  </p>
-                </div>
-              ))}
-            </div>
+            </button>            
+            {loading &&
+              <div className="mt-40 text-[3rem] text-purple-300">
+                Carregando...
+              </div>              
+            }
+            {!loading && movies.length > 0 &&
+              <>
+              <div>Total de Filmes: {movies.length}</div>
+              
+              <div className="mt-3 grid grid-cols-6 gap-3">
+                {movies.map((item, index) => (
+                  <div key={index}>
+                    <img src={item.avatar} className="w-32 block" />
+                    <p className="text-white
+                    font-normal 
+                    text-[12px]"
+                    >
+                      {item.titulo}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              </>
+            }
+            {!loading && movies.length === 0 &&
+              <div>Tente mais tarde...</div>
+            }
         </div>
       </div>
     </div>      
