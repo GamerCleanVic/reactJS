@@ -1,48 +1,33 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import * as C from './components/styled1/AppStyles';
-import {Movies} from './components/types/Movies';
+import {Post} from './components/types/Post';
 
 
-const App = () => {
+const App = () => { 
 
-  const [movies, setMovies] = useState<Movies[]>([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(
-    () => {
-      loadMovies();
-    }, []
-  );
-
-  /* const loadMovies = () => {
-    fetch('https://api.b7web.com.br/cinema/')
-    .then(
-      (response) => {
-          return response.json();
-      }
-    )
-    .then(
-      (json)=>{
-        setMovies(json);
-      }
-    );
-  } */
-
-  const loadMovies = async () => {
-    try{
-      setLoading(true);
-      let response = await fetch('https://api.b7web.com.br/cinema');
-      let json = await response.json();
-      setLoading(false);
-      setMovies(json);
-    }
-    catch(e){
-        setLoading(false);
-        setMovies([]);
-    }
+  const [posts, setPosts] = useState<Post[]>([]);
+  const loadPosts = async () => {
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    let json = await response.json();
+    setPosts(json);
   }
+  const [addTitleText, setAddTitleText] = useState(['']);
+  const [addBodyText, setAddBodyText] = useState(['']);
 
-  return(
-    
+  useEffect(() => {
+    loadPosts();
+  }, []);
+
+  const handleAddTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setAddTitleText(e.target.value);
+  }
+  const handleAddBodyChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setAddBodyText(e.target.value);
+  }
+  const handleAddClick = () => {
+    alert(addTitleText+' - '+addBodyText);
+  }
+  return(  
     <div className="
     bg-blue-900
       p-3
@@ -65,45 +50,56 @@ const App = () => {
       text-cyan-300
         mr-3
 
-      ">
-        <a href='#' className='no-underline'>ARTIGOS</a>        
-        <div>            
-            <button className="
-              mt-7
-             text-blue-700
-              flex rol
-             "
-              onClick={loadMovies}
+      ">        
+        <a href='#' className='no-underline'>ARTIGOS</a> 
+
+        <fieldset className="border-2 mb-3 p-3 mt-7">
+            <legend>Adicionar Novo Post</legend>
+            <input className="block border m-3"
+              value={addTitleText}
+              onChange={handleAddTitleChange}
+              type="text" 
+              placeholder="Digite um título"
+             />
+            <textarea className="block border
+              m-3"
+              value={addBodyText}
+              onChange={handleAddBodyChange} 
+             ></textarea>
+            <button className="block border
+             text-blue-700 m-3"
+                onClick={handleAddClick}
              >
-              Carregar filmes
-            </button>            
-            {loading &&
-              <div className="mt-40 text-[3rem] text-purple-300">
-                Carregando...
-              </div>              
-            }
-            {!loading && movies.length > 0 &&
-              <>
-              <div>Total de Filmes: {movies.length}</div>
-              
-              <div className="mt-3 grid grid-cols-6 gap-3">
-                {movies.map((item, index) => (
-                  <div key={index}>
-                    <img src={item.avatar} className="w-32 block" />
-                    <p className="text-white
-                    font-normal 
-                    text-[12px]"
-                    >
-                      {item.titulo}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              </>
-            }
-            {!loading && movies.length === 0 &&
-              <div>Tente mais tarde...</div>
-            }
+              Adicionar
+            </button>
+        </fieldset>
+
+        <div className="mt-7">            
+            Total de posts: {posts.length}
+        </div>
+        <div>
+          {posts.map((item, index) => (
+            <div key={index}>
+              <h4 
+                className="
+                  text-blue-400
+                  text-[1.4rem]                  
+                "
+              >{item.title}</h4>
+              <small 
+                className="
+                  text-yellow-400                    
+                "
+              >#{item.id} - Usuário {item.userId}</small>
+              <p 
+                className="
+                  text-white
+                  text-[0.7rem]
+                  mb-5
+                "
+              >{item.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>      
