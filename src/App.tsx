@@ -12,7 +12,6 @@ const App = () => {
     <div className="p-5 text-green-300">
       <Header />
       <Body />
-      <Footer />
     </div>
   );
 }
