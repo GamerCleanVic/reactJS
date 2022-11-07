@@ -61,6 +61,12 @@ body {
   text-transform: uppercase;
   margin-bottom: 12rem;
 }
+.btnRedes{
+  color: lightgreen;
+}
+.btnRedes:hover{
+  color: #ffff99;
+}
 /*
 .headerVite{
   background-color: #181818;
