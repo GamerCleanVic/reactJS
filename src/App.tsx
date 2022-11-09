@@ -14,8 +14,8 @@ import {ImMenu} from 'react-icons/im';
 import './App.css';
 import {Home} from './pages/Home';
 import {About} from './pages/About';
-import {AboutJoao} from './pages/AboutJoao';
-import {AboutPedro} from './pages/AboutPedro';
+import {AboutItem} from './pages/AboutItem';
+import {NotFound} from './pages/NotFound';
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -32,11 +32,13 @@ const App = () => {
                       <div>
                           <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/sobre" element={<About />} />
-                            <Route path="/sobre/joao" element={<AboutJoao />} />
-                            <Route path="/sobre/pedro" element={<AboutPedro />} />
+                            <Route path="/sobre" element={<About />} />                            
+                            <Route path="/sobre:slug" element={<AboutItem />} />
+                            <Route path="*" element={<NotFound />} />
                           </Routes>
-                        <div className="text-yellow-200 mt-4"> Rotas na URL: /sobre, /sobre/joao, /sobre/pedro</div>
+                        <div className="text-yellow-200 mt-4">
+                          Rotas na URL: /sobre, /sobre/joao, /sobre/pedro
+                        </div>
                     </div>
                 </div>
                 <hr />
