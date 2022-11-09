@@ -33,7 +33,7 @@ const App = () => {
                           <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/sobre" element={<About />} />                            
-                            <Route path="/sobre:slug" element={<AboutItem />} />
+                            <Route path="/sobre/:slug" element={<AboutItem />} />
                             <Route path="*" element={<NotFound />} />
                           </Routes>
                         <div className="text-yellow-200 mt-4">
