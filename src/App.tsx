@@ -12,10 +12,7 @@ import {ImMenu} from 'react-icons/im';
 //import './layouts/body/index.css';
 //import {useEffect} from 'react';
 import './App.css';
-import {Home} from './pages/Home';
-import {About} from './pages/About';
-import {AboutItem} from './pages/AboutItem';
-import {NotFound} from './pages/NotFound';
+import {MainRoutes} from './routes/MainRoutes';
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -30,12 +27,7 @@ const App = () => {
                     <h1 className="uppercase">Estudo de rotas</h1>
                     <hr />
                       <div>
-                          <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/sobre" element={<About />} />                            
-                            <Route path="/sobre/:slug" element={<AboutItem />} />
-                            <Route path="*" element={<NotFound />} />
-                          </Routes>
+                        <MainRoutes />                          
                         <div className="text-yellow-200 mt-4">
                           Rotas na URL: /sobre, /sobre/joao, /sobre/pedro
                         </div>
